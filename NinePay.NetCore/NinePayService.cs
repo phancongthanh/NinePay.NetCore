@@ -60,6 +60,7 @@ namespace NinePay.NetCore
 
             // Thêm URL callback để nhận kết quả trả về từ NinePay sau khi thanh toán
             ninePay.AddRequestData("return_url", await GetAbsoluteUrl(_options.ReturnURL));
+            ninePay.AddRequestData("back_url", await GetAbsoluteUrl(_options.ReturnURL));
 
             // Thêm các thông tin giao dịch
             ninePay.AddRequestData("invoice_no", request.RequestCode); // Mã giao dịch
